@@ -15,9 +15,12 @@
         <td>{{product.category}}</td>
         <td>{{product.brand}}</td>
         <td>{{product.price}}</td>
+        <td><a ui-sref="product.detail">Select</a></td>
         <td>
             <button class="btn btn-primary" ng-click="addProductToCart(product)">Add To Cart</button>
         </td>
     </tr>
 
 </table>
+
+<div ui-view></div>

@@ -16,6 +16,13 @@
                     controller: "productCtrl",
                     url: "products"
                 };
+
+                var productDetail = {
+                    name: "product.detail",
+                    templateUrl: 'app/products/products.detail.html',
+                    parent: "product"
+
+                };
                 var cartObj = {
                     name: "cart",
                     templateUrl: 'app/products/products.html',
@@ -29,8 +36,15 @@
                 //registering the state.
                 $StateProvider.state("home", homeObj);
                 $StateProvider.state("product", prodcutObj);
+                $StateProvider.state("product.detail", productDetail);
                 $StateProvider.state("cart", cartObj);
 
                      }])
-    }
-)();
+            .run(["$rootScope", function ($rootScope) {
+
+                $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+
+                });
+            }]);
+
+    })();
