@@ -1,0 +1,23 @@
+<h1>{{viewName}}</h1>
+
+<table class="table table-striped">
+    <tr>
+        <td>S.No</td>
+        <td>Category</td>
+        <td>Brand</td>
+        <td>Price</td>
+        <td>
+            <button class="btn btn-warning" ng-click="goToCart()">Go to Cart</button>
+        </td>
+    </tr>
+    <tr ng-repeat="product in products">
+        <td>{{$index}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.brand}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <button class="btn btn-primary" ng-click="addProductToCart(product)">Add To Cart</button>
+        </td>
+    </tr>
+
+</table>
